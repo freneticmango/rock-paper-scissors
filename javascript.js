@@ -1,3 +1,5 @@
+// Uses a random number generator to choose a selection and returns it
+
 function getComputerChoice() {
     choose = Math.random();
 
@@ -11,6 +13,8 @@ function getComputerChoice() {
 
     return computerChoice;
 }
+
+// Prompts the human player for a selection and returns it. Case insensitive. Only accepts rock, paper, or scissors.
 
 function getHumanChoice() {
     chosen = false;
@@ -34,12 +38,16 @@ function getHumanChoice() {
     return humanChoice;
 }
 
+// Contains logic for playing 5 rounds of rock, paper, scissors. 
+
 function playGame() {
 
     let humanScore = 0;
     let computerScore = 0;
 
     let round = 1;
+
+    // Contains logic for playing a single round, increments scores and reports round winner
 
     function playRound(humanChoice, computerChoice) {
     
@@ -66,6 +74,8 @@ function playGame() {
         }
     }
 
+    // Get selections from human and computer players, plays a round, and reports scores
+
     humanSelection = getHumanChoice();
     computerSelection = getComputerChoice();
 
@@ -80,6 +90,8 @@ function playGame() {
 
         round++;
     }
+
+    //Reports overall game winner
 
     if (humanScore > computerScore) {
         console.log('You won the game!')
