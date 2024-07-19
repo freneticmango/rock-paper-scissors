@@ -1,9 +1,9 @@
 function getComputerChoice() {
     choose = Math.random()
 
-    if (choose < .3) {
+    if (choose < .333) {
         computerChoice = 'rock'
-    } else if (choose > .3 && choose < .6) {
+    } else if (choose > .333 && choose < .666) {
         computerChoice = 'paper'
     } else {
         computerChoice = 'scissors'
@@ -12,5 +12,27 @@ function getComputerChoice() {
     return computerChoice
 }
 
-compChoice = getComputerChoice()
-console.log(compChoice)
+function getHumanChoice() {
+    chosen = false
+    choose = prompt("Rock, paper, or scissors?")
+
+    while (chosen == false) {
+    if (choose.toLowerCase() === 'rock') {
+        humanChoice = 'rock'
+        chosen = true
+    } else if (choose.toLowerCase() === 'paper') {
+        humanChoice = 'paper'
+        chosen = true
+    } else if (choose.toLowerCase() === 'scissors') {
+        humanChoice = 'scissors'
+        chosen = true
+    } else {
+        choose = prompt("Please input rock, paper, or scissors.")
+    }
+    }
+
+    return humanChoice
+}
+
+playerChoice = getHumanChoice()
+console.log(playerChoice)
